@@ -1,22 +1,66 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Login from "../views/Login";
+import Home from "../views/Home";
+import App from "../views/App";
+import Info from "../views/Info";
+import My from "../views/My";
+import create from '../views/Create'
+import OneStageApproval from '../views/OneStageApproval'
+import TwoStageApproval from '../views/TwoStageApproval'
+import Repair from "../views/Repair";
 
 Vue.use(VueRouter)
 
-  const routes = [
+const routes = [
   {
-    path: '/',
-    name: 'Home',
+    path: "/",
+    redirect: '/login'
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: Login
+  },
+  {
+    path: '/home',
+    name: 'home',
     component: Home
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: '/app',
+    name: 'app',
+    component: App
+  },
+  {
+    path: '/info',
+    name: 'info',
+    component: Info
+  },
+  {
+    path: '/my',
+    name: 'my',
+    component: My
+  },
+  {
+    path: '/create',
+    name: 'create',
+    component: create
+  },
+  {
+    path: '/approval_1',
+    name: 'approval_1',
+    component: OneStageApproval
+  },
+  {
+    path: '/approval_2',
+    name: 'approval_2',
+    component: TwoStageApproval
+  },
+  {
+    path: '/repair',
+    name: 'repair',
+    component: Repair
   }
 ]
 
