@@ -9,6 +9,7 @@ import create from '../views/Create'
 import OneStageApproval from '../views/OneStageApproval'
 import TwoStageApproval from '../views/TwoStageApproval'
 import Repair from "../views/Repair";
+import FeedBack from "../views/FeedBack.vue"
 
 Vue.use(VueRouter)
 
@@ -57,6 +58,11 @@ const routes = [
     name: 'approval_2',
     component: TwoStageApproval
   },
+	{
+		path:'/feedback',
+		name:'feedback',
+		component:FeedBack
+	},
   {
     path: '/repair',
     name: 'repair',

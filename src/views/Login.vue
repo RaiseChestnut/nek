@@ -176,7 +176,7 @@
                 text-align: center;
                 font-size: 1.5rem;
                 color: #ffffff;
-                background-color: var(--primary);
+                background-color: #26a2ff;
                 border-radius: 8px;
             }
         }

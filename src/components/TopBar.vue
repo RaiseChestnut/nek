@@ -1,5 +1,5 @@
 <template>
-    <van-nav-bar style="background-color:#26a2ff;">
+    <van-nav-bar style="background-color:#26a2ff; width: 100vw;">
         <span slot="left" class="left" v-if="backShow" @click="$router.back()">
             <van-icon color="#fff"
                       name="arrow-left"/></span>
