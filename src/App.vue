@@ -1,8 +1,8 @@
 <template>
 	<div id="app">
-		<transition name="slide">
+<!--		<transition name="slide">-->
 			<router-view></router-view>
-		</transition>
+<!--		</transition>-->
 		<tab-bar></tab-bar>
 	</div>
 </template>

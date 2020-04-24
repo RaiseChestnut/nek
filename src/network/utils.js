@@ -12,9 +12,7 @@ export function getToken(data) {
 /** 流程定义**/
 export function processDefinitions() {
   return request({
-    // headers: {'Authorization': `Bearer ${localStorage.getItem("token")}`},
-    url: '/process-definitions'
-    // url: '/nalco-rb-rs/v1/process-definitions'
+    url: '/nalco-rb-rs/v1/process-definitions'
   })
 }
 
@@ -31,10 +29,24 @@ export function startProcess() {
   })
 }
 
-/** 请求待办列表**/
-export function getTask() {
+/** 流程参数**/
+export function startProcessWithVariables(id) {
   return request({
-    url: `nalco-rb-rs/v1/tasks?page=0&size=10`
+    method: 'get',
+    url: `nalco-rb-rs/v1/process-instances/${id}/variables`,
+    data: {
+      "processDefinitionKey": "process-7543178f-6a6a-4d01-8ae6-2ff7c81e3e01",
+      "payloadType": "StartProcessPayload",
+      "commandType": "StartProcessInstanceCmd",
+    }
+  })
+}
+
+/** 请求待办列表**/
+export function getTask(option = {page: 0, size: 10}) {
+  return request({
+    headers: {"Accept": "*/*"},
+    url: `nalco-rb-rs/v1/tasks`
   })
 }
 
@@ -46,7 +58,7 @@ export function getTaskItem(id) {
 }
 
 /** 任务提交接口**/
-export function complete(id, data) {
+export function complete(id,data) {
   return request({
     method: 'post',
     headers: {"Content-Type": "application/json"},
@@ -56,9 +68,9 @@ export function complete(id, data) {
 }
 
 /** 任务指派**/
-export function claim(id, name) {
+export function claim(id, option = '') {
   return request({
     method: 'post',
-    url: `/nalco-rb-rs/v1/tasks/${id}/claim?assignee=${name}`
+    url: `/nalco-rb-rs/v1/tasks/${id}/claim/${option}`
   })
 }

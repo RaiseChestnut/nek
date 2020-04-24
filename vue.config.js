@@ -12,19 +12,19 @@ module.exports = {
     }
   },
   devServer: {
-    port: 8081,
-    host: "localhost",
-    https: false,
-    open: false,
-    proxy: {
-      '/api': {
-        target: 'http://119.45.2.113:8888',
-        changeOrigin: true,
-        ws: true,
-        pathRewrite: {
-          '^/api': ''
-        }
-      }
-    }
+    // port: 2181,
+    // host: "127.0.0.1",
+    // https: false,
+    // open: false,
+    // proxy: {
+    //   '/api': {
+    //     target: 'http://119.45.2.113:8888',
+    //     changeOrigin: true,
+    //     ws: true,
+    //     pathRewrite: {
+    //       '^/api': ''
+    //     }
+    //   }
+    // }
   }
 }

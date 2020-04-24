@@ -49,14 +49,16 @@
     methods: {
       login() {
         /** 获取 token **/
+
         getToken(Qs.stringify(this.form)).then(res => {
           const token = res.data.access_token
-          console.log(token)
           localStorage.setItem("token", token)
         })
+
         if (localStorage.getItem('token')) {
           this.$router.push({name: 'home'})
         }
+
       }
     }
   }

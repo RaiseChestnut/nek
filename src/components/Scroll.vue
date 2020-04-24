@@ -33,5 +33,12 @@
 </script>
 
 <style scoped>
-
+.wrapper{
+    position: absolute;
+    top: 46px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+}
 </style>

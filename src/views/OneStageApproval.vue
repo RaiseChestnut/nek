@@ -1,11 +1,11 @@
 <template>
-    <div>
+    <div id="OneApproval">
         <top-bar title="审批一" :back-show="true"></top-bar>
         <scroll class="content">
             <container>
                 <create-form></create-form>
-                <one-stage-approval-form></one-stage-approval-form>
-                <submission></submission>
+                <one-stage-approval-form ref="form"></one-stage-approval-form>
+                <submission @onsubmit="onSubmit"></submission>
             </container>
         </scroll>
     </div>
@@ -18,20 +18,30 @@
   import Submission from "../components/Submission";
   import Container from "../components/Container";
   import Scroll from "../components/Scroll";
+  import {complete} from "../network/utils";
 
   export default {
     name: "OneStageApproval",
-    components: {Scroll, Container, Submission, OneStageApprovalForm, CreateForm, TopBar}
+    components: {Scroll, Container, Submission, OneStageApprovalForm, CreateForm, TopBar},
+    methods: {
+      onSubmit() {
+        console.log(this.$refs.form.data)
+        complete(id, data).then(res => {
+          console.log(res)
+        }).catch(err => {
+          console.log(err)
+        })
+      }
+    }
   }
 </script>
 
 <style scoped>
-    .content {
-        position: absolute;
-        top: 46px;
-        left: 0;
-        right: 0;
-        bottom: 49px;
-        overflow: hidden;
+    #OneApproval {
+        height: 100vh;
+        width: 100vw;
+        position: relative;
+        background-color: #fff;
+        z-index: 999;
     }
 </style>

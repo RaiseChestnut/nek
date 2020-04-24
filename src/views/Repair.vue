@@ -31,11 +31,6 @@
 
 <style scoped>
  .content {
-        position: absolute;
-        top: 46px;
-        left: 0;
-        right: 0;
-        bottom: 49px;
-        overflow: hidden;
+
     }
 </style>
